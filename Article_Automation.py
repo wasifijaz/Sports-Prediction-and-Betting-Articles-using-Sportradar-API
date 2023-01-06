@@ -746,7 +746,7 @@ class NHL_Article(Sitpicks):
 
 if __name__ == '__main__':
     sitpick = Sitpicks()
-    # nba = NBA_Article()
+    nba = NBA_Article()
     nhl = NHL_Article()
-    # nba.nba_main()
+    nba.nba_main()
     nhl.nhl_main()
