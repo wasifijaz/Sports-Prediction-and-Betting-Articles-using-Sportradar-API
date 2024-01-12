@@ -30,7 +30,7 @@ IMAGESPATH = "/home/ubuntu/article-automation"
 logging.basicConfig(filename='cron.logs', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
-class Sitpicks:
+class Betpicks:
 
     def __init__(self):
         article_date = date.today()
@@ -113,7 +113,7 @@ class Sitpicks:
                 return thumbnail
     
 
-class MLB_Article(Sitpicks):
+class MLB_Article(Betpicks):
     
     def __init__(self):
         article_date = date.today()
@@ -137,7 +137,7 @@ class MLB_Article(Sitpicks):
     def generate_html(self, games_data_article):
         for data in games_data_article:
             html = "<head><meta charset='UTF-8'><meta name='keywords' content='HTML, CSS, JavaScript'></head>"
-            html += Sitpicks.generate_response(self, "The " + data["Team 1 (T1)"] + " (" + str(data['Team 1 (T1) win']) + "-" + str(data['Team 1 (T1) loss']) + ") " + " host the " + data["Team 2 (T2)"] + " (" + str(data['Team 2 (T2) win']) + "-" + str(data['Team 2 (T2) loss']) + ") " + " on " + str(data["game_day_name"])  + " at " + str(data["Game Time"]) + " EST." +  str(data["Team 1 (T1) starting pitcher"]) + " will get the start for the " + data["Team 1 (T1)"].split()[-1]  + " vs. " + str(data["Team 2 (T2) starting pitcher"]) + " for the " + data["Team 2 (T2)"].split()[-1]  + " of the day with the first pitch at " + str(data["Game Time"]) + " EST at " + str(data["Arena"]) + ". The " + data["Team 1 (T1)"].split()[-1]  +" are listed as 100 while the" + data["Team 2 (T2)"].split()[-1] + "  have 100 to win." )
+            html += Betpicks.generate_response(self, "The " + data["Team 1 (T1)"] + " (" + str(data['Team 1 (T1) win']) + "-" + str(data['Team 1 (T1) loss']) + ") " + " host the " + data["Team 2 (T2)"] + " (" + str(data['Team 2 (T2) win']) + "-" + str(data['Team 2 (T2) loss']) + ") " + " on " + str(data["game_day_name"])  + " at " + str(data["Game Time"]) + " EST." +  str(data["Team 1 (T1) starting pitcher"]) + " will get the start for the " + data["Team 1 (T1)"].split()[-1]  + " vs. " + str(data["Team 2 (T2) starting pitcher"]) + " for the " + data["Team 2 (T2)"].split()[-1]  + " of the day with the first pitch at " + str(data["Game Time"]) + " EST at " + str(data["Arena"]) + ". The " + data["Team 1 (T1)"].split()[-1]  +" are listed as 100 while the" + data["Team 2 (T2)"].split()[-1] + "  have 100 to win." )
             
             
             ######### ODDS DATA #########   
@@ -259,7 +259,7 @@ class MLB_Article(Sitpicks):
             except Exception:
                 pass
             images_folder_path = IMAGESPATH + "/MLB_Images"
-            thumbnail = Sitpicks.get_article_thumbnail(self, images_folder_path, str(data['Team 1 (T1)'].split()[-1]))
+            thumbnail = Betpicks.get_article_thumbnail(self, images_folder_path, str(data['Team 1 (T1)'].split()[-1]))
             current_path = SAVEDIRPATH + "/MLB/"
             try:
                 shutil.copy(thumbnail[1], current_path)
@@ -273,7 +273,7 @@ class MLB_Article(Sitpicks):
         for data in games_data_article:
 
             html = "<head><meta charset='UTF-8'><meta name='keywords' content='HTML, CSS, JavaScript'></head>"
-            html += Sitpicks.generate_response(self, "The " + data["Team 1 (T1)"] + " (" + str(data['Team 1 (T1) win']) + "-" + str(data['Team 1 (T1) loss']) + ") " + " host the " + data["Team 2 (T2)"] + " (" + str(data['Team 2 (T2) win']) + "-" + str(data['Team 2 (T2) loss']) + ") " + " on " + str(data["game_day_name"])  + " at " + str(data["Game Time"]) + " EST." +  str(data["Team 1 (T1) starting pitcher"]) + " will get the start for the " + data["Team 1 (T1)"].split()[-1]  + " vs. " + str(data["Team 2 (T2) starting pitcher"]) + " for the " + data["Team 2 (T2)"].split()[-1]  + " of the day with the first pitch at " + str(data["Game Time"]) + " EST at " + str(data["Arena"]) + ". The " + data["Team 1 (T1)"].split()[-1]  +" are listed as 100 while the" + data["Team 2 (T2)"].split()[-1] + "  have 100 to win." )
+            html += Betpicks.generate_response(self, "The " + data["Team 1 (T1)"] + " (" + str(data['Team 1 (T1) win']) + "-" + str(data['Team 1 (T1) loss']) + ") " + " host the " + data["Team 2 (T2)"] + " (" + str(data['Team 2 (T2) win']) + "-" + str(data['Team 2 (T2) loss']) + ") " + " on " + str(data["game_day_name"])  + " at " + str(data["Game Time"]) + " EST." +  str(data["Team 1 (T1) starting pitcher"]) + " will get the start for the " + data["Team 1 (T1)"].split()[-1]  + " vs. " + str(data["Team 2 (T2) starting pitcher"]) + " for the " + data["Team 2 (T2)"].split()[-1]  + " of the day with the first pitch at " + str(data["Game Time"]) + " EST at " + str(data["Arena"]) + ". The " + data["Team 1 (T1)"].split()[-1]  +" are listed as 100 while the" + data["Team 2 (T2)"].split()[-1] + "  have 100 to win." )
             
             
             ######### ODDS DATA #########   
@@ -398,7 +398,7 @@ class MLB_Article(Sitpicks):
             except Exception:
                 pass
             images_folder_path = IMAGESPATH + "/MLB_Images"
-            thumbnail = Sitpicks.get_article_thumbnail(self, images_folder_path, str(data['Team 1 (T1)'].split()[-1]))
+            thumbnail = Betpicks.get_article_thumbnail(self, images_folder_path, str(data['Team 1 (T1)'].split()[-1]))
             current_path = SAVEDIRPATH + "/MLB/"
             try:
                 shutil.copy(thumbnail[1], current_path)
@@ -423,7 +423,7 @@ class MLB_Article(Sitpicks):
         # http://api.sportradar.us/mlb/trial/v7/en/games/2023/05/31/schedule.json?api_key=nappjc3prcnjt4d445vuehxq
 
         
-        data = Sitpicks.get_games_info(self, URL)
+        data = Betpicks.get_games_info(self, URL)
         if data.__contains__('games'):
             games = data['games']
             games_data_article = []
@@ -442,7 +442,7 @@ class MLB_Article(Sitpicks):
                     \n\nWe understand that you were expecting a detailed article for this match, and we apologize that we could not deliver on this occasion. We apologize once again for any inconvenience caused, and we thank you for your understanding. If you have any questions or concerns, please do not hesitate to reach out to us.\
                     \n\nBest regards,\
                     \n\nAutomated Articles Bot\
-                    \nSitpicks')
+                    \nBetpicks')
                     msg['Subject'] = 'Match Article Not Generated Due to Unnecessary Status'
                     msg['From'] = 'contact@sportsinformationtraders.com'
                     msg['To'] = 'sportsinformationtraders@gmail.com'
@@ -488,10 +488,10 @@ class MLB_Article(Sitpicks):
 
                 #########   GAME STATISTICS #########
                 URL =  "http://api.sportradar.us/mlb/trial/v7/en/seasons/"+ self.YEAR + "/REG/teams/" + team_home_id + "/statistics.json?api_key=" + self.API_KEY
-                home_data = Sitpicks.get_data_request(self, URL)
+                home_data = Betpicks.get_data_request(self, URL)
 
                 URL =  "http://api.sportradar.us/mlb/trial/v7/en/seasons/"+ self.YEAR + "/REG/teams/" + team_away_id + "/statistics.json?api_key=" + self.API_KEY
-                away_data = Sitpicks.get_data_request(self, URL)
+                away_data = Betpicks.get_data_request(self, URL)
 
 
                 # PITCHING MATCH UP TABLE INFO
@@ -513,7 +513,7 @@ class MLB_Article(Sitpicks):
 
 
                 URL =  "http://api.sportradar.us/mlb/trial/v7/en/games/"+ game_id + "/summary.json?api_key=" + self.API_KEY
-                game_summary = Sitpicks.get_data_request(self, URL)
+                game_summary = Betpicks.get_data_request(self, URL)
      
                 
                 # STARTING PITCHER INFO
@@ -528,7 +528,7 @@ class MLB_Article(Sitpicks):
                 URL =  "http://api.sportradar.us/mlb/trial/v7/en/seasons/" + self.YEAR + "/REG/teams/" + team_home_id + "/statistics.json?api_key=" + self.API_KEY
                 # http://api.sportradar.us/mlb/trial/v7/en/seasons/2023/REG/teams/55714da8-fcaf-4574-8443-59bfb511a524/statistics.json?api_key=nappjc3prcnjt4d445vuehxq
 
-                home_season_stats = Sitpicks.get_data_request(self, URL)
+                home_season_stats = Betpicks.get_data_request(self, URL)
 
                 home_player_season_stats = home_season_stats['players']
                 home_player_season_stats.sort(key=self.get_mlb_season_points)
@@ -559,7 +559,7 @@ class MLB_Article(Sitpicks):
                 URL =  "http://api.sportradar.us/mlb/trial/v7/en/seasons/" + self.YEAR + "/REG/teams/" + team_away_id + "/statistics.json?api_key=" + self.API_KEY
                 # http://api.sportradar.us/mlb/trial/v7/en/seasons/2023/REG/teams/55714da8-fcaf-4574-8443-59bfb511a524/statistics.json?api_key=nappjc3prcnjt4d445vuehxq
 
-                away_season_stats = Sitpicks.get_data_request(self, URL)
+                away_season_stats = Betpicks.get_data_request(self, URL)
 
                 away_player_season_stats = away_season_stats['players']
                 away_player_season_stats.sort(key=self.get_mlb_season_points)
@@ -639,7 +639,7 @@ class MLB_Article(Sitpicks):
             print("Data not Found")
            
 
-class NBA_Article(Sitpicks):
+class NBA_Article(Betpicks):
 
     def __init__(self):
         article_date = date.today()
@@ -665,7 +665,7 @@ class NBA_Article(Sitpicks):
     def generate_html(self, games_data_article):
         for data in games_data_article:
             html = "<head><meta charset='UTF-8'><meta name='keywords' content='HTML, CSS, JavaScript'></head>"
-            html += Sitpicks.generate_response(self, data['Player Stats (T1)'][0]['home_top_season_player_name'] + " and the " + data['Team 1 (T1)'] + " will look to fend off " + data['Player Stats (T2)'][0]['away_top_season_player_name'] + "s " + data['Team 2 (T2)'] + " on " + data['Game Day'] + ". The " + data['favorite_team'] + " are (" + data['spread'] + ")-point favorite. A point total of (" + data['total_over_under'] + ") is set for the game. Find more below on the " + data['Team 1 (T1)'].split()[-1] + " vs. " + data['Team 2 (T2)'].split()[-1] + " betting line, injury report, head-to-head stats, best bets and more.")
+            html += Betpicks.generate_response(self, data['Player Stats (T1)'][0]['home_top_season_player_name'] + " and the " + data['Team 1 (T1)'] + " will look to fend off " + data['Player Stats (T2)'][0]['away_top_season_player_name'] + "s " + data['Team 2 (T2)'] + " on " + data['Game Day'] + ". The " + data['favorite_team'] + " are (" + data['spread'] + ")-point favorite. A point total of (" + data['total_over_under'] + ") is set for the game. Find more below on the " + data['Team 1 (T1)'].split()[-1] + " vs. " + data['Team 2 (T2)'].split()[-1] + " betting line, injury report, head-to-head stats, best bets and more.")
             html += "\n<h2>" + data['Team 1 (T1)'].split()[-1] + " vs " + data['Team 2 (T2)'].split()[-1] + " Spread and Betting Line</h2>"
             html += '\n<table class="table"><caption>' + data['Team 1 (T1)'].split()[-1] + ' vs ' + data['Team 2 (T2)'].split()[-1] + ' Betting Information</caption>'
             table1_col = ["Favorite", "Spread", "Favorite Spread Odds", "Underdog Spread Odds", "Total", "Over Total Odds", "Under Total Odds", "Favorite Moneyline", "Underdog Moneyline"]
@@ -686,19 +686,19 @@ class NBA_Article(Sitpicks):
             html += f'\n<tbody>\n<tr>\n<td>{table2_rn.join(table2_row)}</td>\n</tr>\n</tbody>\n</table>'
             # html += "\n<h2>" + data['Team 1 (T1)'].split()[-1] + " vs " + data['Team 2 (T2)'].split()[-1] + " Betting Trends</h2>"
             # article_betting_trends = [
-            #     Sitpicks.generate_response(self, data['Team 1 (T1)'].split()[0] + "'s record against the spread last year was xx-xx-x."), 
-            #     Sitpicks.generate_response(self, "As "+data['spread']+"-point favorites or more, the " + data['Team 1 (T1)'].split()[-1] + " went xx-xx against the spread last season."), 
-            #     Sitpicks.generate_response(self, "There were xx " + data['Team 1 (T1)'].split()[0] + " games (out of xx) that went over the total last year.")
+            #     Betpicks.generate_response(self, data['Team 1 (T1)'].split()[0] + "'s record against the spread last year was xx-xx-x."), 
+            #     Betpicks.generate_response(self, "As "+data['spread']+"-point favorites or more, the " + data['Team 1 (T1)'].split()[-1] + " went xx-xx against the spread last season."), 
+            #     Betpicks.generate_response(self, "There were xx " + data['Team 1 (T1)'].split()[0] + " games (out of xx) that went over the total last year.")
             #     ]
             list2_rn = '</li>\n<li>'
             # html += f'\n<ul>\n<li>{list2_rn.join(article_betting_trends)}</li>\n</ul>'
             html += "\n<h2>" + data['Team 1 (T1)'] + " Leaders</h2>"
             article_team1_leader = [
-                Sitpicks.generate_response(self, data['Player Stats (T1)'][0]['home_top_season_player_name'] + " paced his squad in points (" + str(data['Player Stats (T1)'][0]['home_top_season_points']) + "), rebounds (" + str(data['Player Stats (T1)'][0]['home_top_season_rebounds']) + ") and assists (" + str(data['Player Stats (T1)'][0]['home_top_season_assists']) + ") per contest last season, shooting " + str(round(data['Player Stats (T1)'][0]['home_top_season_field_point'],1)) + "% from the field and " + str(round(data['Player Stats (T1)'][0]['home_top_season_downtownpoint'],1)) + "% from downtown with " + str(data['Player Stats (T1)'][0]['home_top_season_three_points']) + " made 3-pointers per contest. At the other end, he delivered " + str(data['Player Stats (T1)'][0]['home_top_season_steals']) + " steals and " + str(data['Player Stats (T1)'][0]['home_top_season_blocks']) + " blocks."),
-                Sitpicks.generate_response(self, data['Player Stats (T1)'][1]['home_top_season_player_name'] + " posted " + str(data['Player Stats (T1)'][1]['home_top_season_points']) + " points, " + str(data['Player Stats (T1)'][1]['home_top_season_assists']) + " assists and " + str(data['Player Stats (T1)'][1]['home_top_season_rebounds']) + " rebounds per contest last year."),
-                Sitpicks.generate_response(self, data['Player Stats (T1)'][2]['home_top_season_player_name'] + " averaged " + str(data['Player Stats (T1)'][2]['home_top_season_points']) + " points, " + str(data['Player Stats (T1)'][2]['home_top_season_rebounds']) + " rebounds and " + str(data['Player Stats (T1)'][2]['home_top_season_assists']) + " assists per contest last season. At the other end, he averaged " + str(data['Player Stats (T1)'][2]['home_top_season_steals']) + " steals and " + str(data['Player Stats (T1)'][2]['home_top_season_blocks']) + " blocks."),
-                Sitpicks.generate_response(self, data['Player Stats (T1)'][3]['home_top_season_player_name'] + " put up " + str(data['Player Stats (T1)'][3]['home_top_season_points']) + " points, " + str(data['Player Stats (T1)'][3]['home_top_season_rebounds']) + " rebounds and " + str(data['Player Stats (T1)'][3]['home_top_season_assists']) + " assists per contest last year. At the other end, he posted " + str(data['Player Stats (T1)'][3]['home_top_season_steals']) + " steals and " + str(data['Player Stats (T1)'][3]['home_top_season_blocks']) + " blocks."),
-                Sitpicks.generate_response(self, data['Player Stats (T1)'][4]['home_top_season_player_name'] + " put up " + str(data['Player Stats (T1)'][4]['home_top_season_points']) + " points, " + str(data['Player Stats (T1)'][4]['home_top_season_rebounds']) + " rebounds and " + str(data['Player Stats (T1)'][4]['home_top_season_assists']) + " assists per game last year, shooting " + str(round(data['Player Stats (T1)'][4]['home_top_season_field_point'],1)) + "% from the floor and " + str(round(data['Player Stats (T1)'][4]['home_top_season_downtownpoint'],1)) + "% from beyond the arc with " + str(data['Player Stats (T1)'][4]['home_top_season_three_points']) + " made 3-pointers per game.")
+                Betpicks.generate_response(self, data['Player Stats (T1)'][0]['home_top_season_player_name'] + " paced his squad in points (" + str(data['Player Stats (T1)'][0]['home_top_season_points']) + "), rebounds (" + str(data['Player Stats (T1)'][0]['home_top_season_rebounds']) + ") and assists (" + str(data['Player Stats (T1)'][0]['home_top_season_assists']) + ") per contest last season, shooting " + str(round(data['Player Stats (T1)'][0]['home_top_season_field_point'],1)) + "% from the field and " + str(round(data['Player Stats (T1)'][0]['home_top_season_downtownpoint'],1)) + "% from downtown with " + str(data['Player Stats (T1)'][0]['home_top_season_three_points']) + " made 3-pointers per contest. At the other end, he delivered " + str(data['Player Stats (T1)'][0]['home_top_season_steals']) + " steals and " + str(data['Player Stats (T1)'][0]['home_top_season_blocks']) + " blocks."),
+                Betpicks.generate_response(self, data['Player Stats (T1)'][1]['home_top_season_player_name'] + " posted " + str(data['Player Stats (T1)'][1]['home_top_season_points']) + " points, " + str(data['Player Stats (T1)'][1]['home_top_season_assists']) + " assists and " + str(data['Player Stats (T1)'][1]['home_top_season_rebounds']) + " rebounds per contest last year."),
+                Betpicks.generate_response(self, data['Player Stats (T1)'][2]['home_top_season_player_name'] + " averaged " + str(data['Player Stats (T1)'][2]['home_top_season_points']) + " points, " + str(data['Player Stats (T1)'][2]['home_top_season_rebounds']) + " rebounds and " + str(data['Player Stats (T1)'][2]['home_top_season_assists']) + " assists per contest last season. At the other end, he averaged " + str(data['Player Stats (T1)'][2]['home_top_season_steals']) + " steals and " + str(data['Player Stats (T1)'][2]['home_top_season_blocks']) + " blocks."),
+                Betpicks.generate_response(self, data['Player Stats (T1)'][3]['home_top_season_player_name'] + " put up " + str(data['Player Stats (T1)'][3]['home_top_season_points']) + " points, " + str(data['Player Stats (T1)'][3]['home_top_season_rebounds']) + " rebounds and " + str(data['Player Stats (T1)'][3]['home_top_season_assists']) + " assists per contest last year. At the other end, he posted " + str(data['Player Stats (T1)'][3]['home_top_season_steals']) + " steals and " + str(data['Player Stats (T1)'][3]['home_top_season_blocks']) + " blocks."),
+                Betpicks.generate_response(self, data['Player Stats (T1)'][4]['home_top_season_player_name'] + " put up " + str(data['Player Stats (T1)'][4]['home_top_season_points']) + " points, " + str(data['Player Stats (T1)'][4]['home_top_season_rebounds']) + " rebounds and " + str(data['Player Stats (T1)'][4]['home_top_season_assists']) + " assists per game last year, shooting " + str(round(data['Player Stats (T1)'][4]['home_top_season_field_point'],1)) + "% from the floor and " + str(round(data['Player Stats (T1)'][4]['home_top_season_downtownpoint'],1)) + "% from beyond the arc with " + str(data['Player Stats (T1)'][4]['home_top_season_three_points']) + " made 3-pointers per game.")
                 ]
             html += f'\n<ul>\n<li>{list2_rn.join(article_team1_leader)}</li>\n</ul>'
             html += "\n<h2>" + data['Team 1 (T1)'] + " Season Stats</h2>"
@@ -721,17 +721,17 @@ class NBA_Article(Sitpicks):
             html += f'\n<tr>\n<td>{table3_rn.join(table3_row6)}</td>\n</tr>\n</tbody>\n</table>'
             # html += "\n<h2>" + data['Team 2 (T2)'].split()[-1] + " vs " + data['Team 1 (T1)'].split()[-1] + " Betting Trends</h2>"
             # article_betting_trends_1 = [
-            #     Sitpicks.generate_response(self, "Against the spread, " + data['Team 2 (T2)'].split()[0] + " is xx-xx-x this season."), 
-            #     Sitpicks.generate_response(self, "The " + data['Team 2 (T2)'].split()[-1] + " are xx-xx as "+data['spread']+"-point underdogs or more."), 
-            #     Sitpicks.generate_response(self, "Out of xx " + data['Team 2 (T2)'].split()[0] + " games so far this season, xx have hit the over.")
+            #     Betpicks.generate_response(self, "Against the spread, " + data['Team 2 (T2)'].split()[0] + " is xx-xx-x this season."), 
+            #     Betpicks.generate_response(self, "The " + data['Team 2 (T2)'].split()[-1] + " are xx-xx as "+data['spread']+"-point underdogs or more."), 
+            #     Betpicks.generate_response(self, "Out of xx " + data['Team 2 (T2)'].split()[0] + " games so far this season, xx have hit the over.")
             #     ]
             # list3_rn = '</li>\n<li>'
             # html += f'\n<ul>\n<li>{list3_rn.join(article_betting_trends_1)}</li>\n</ul>'
             html += "\n<h2>" + data['Team 2 (T2)'] + " Leaders</h2>"
             article_team2_leader = [
-                Sitpicks.generate_response(self, data['Player Stats (T2)'][0]['away_top_season_player_name'] + " averages " + str(data['Player Stats (T2)'][0]['away_top_season_points']) + " points and adds " + str(data['Player Stats (T2)'][0]['away_top_season_assists']) + " assists per game, putting him at the top of the " + data['Team 2 (T2)'].split()[-1] + "’ leaderboards in those statistics."),
-                Sitpicks.generate_response(self, data['Player Stats (T2)'][1]['away_top_season_player_name'] + " is at the top of the " + data['Team 2 (T2)'].split()[0] + " " + data['Team 2 (T2)'].split()[1] + " rebounding leaderboard with " + str(data['Player Stats (T2)'][1]['away_top_season_rebounds']) + " rebounds per game. He also notches " + str(data['Player Stats (T2)'][1]['away_top_season_points']) + " points and adds " + str(data['Player Stats (T2)'][1]['away_top_season_assists']) + " assists per game."),
-                Sitpicks.generate_response(self, data['Team 2 (T2)'].split()[0] + " " + data['Team 2 (T2)'].split()[1] + " leader in steals is " + data['away_player_best_steals'] + " with " + str(data['away_player_best_steals_avg']) + " per game, and its leader in blocks is " + data['away_player_best_blocks'] + " with " + str(data['away_player_best_blocks_avg']) + " per game.")
+                Betpicks.generate_response(self, data['Player Stats (T2)'][0]['away_top_season_player_name'] + " averages " + str(data['Player Stats (T2)'][0]['away_top_season_points']) + " points and adds " + str(data['Player Stats (T2)'][0]['away_top_season_assists']) + " assists per game, putting him at the top of the " + data['Team 2 (T2)'].split()[-1] + "’ leaderboards in those statistics."),
+                Betpicks.generate_response(self, data['Player Stats (T2)'][1]['away_top_season_player_name'] + " is at the top of the " + data['Team 2 (T2)'].split()[0] + " " + data['Team 2 (T2)'].split()[1] + " rebounding leaderboard with " + str(data['Player Stats (T2)'][1]['away_top_season_rebounds']) + " rebounds per game. He also notches " + str(data['Player Stats (T2)'][1]['away_top_season_points']) + " points and adds " + str(data['Player Stats (T2)'][1]['away_top_season_assists']) + " assists per game."),
+                Betpicks.generate_response(self, data['Team 2 (T2)'].split()[0] + " " + data['Team 2 (T2)'].split()[1] + " leader in steals is " + data['away_player_best_steals'] + " with " + str(data['away_player_best_steals_avg']) + " per game, and its leader in blocks is " + data['away_player_best_blocks'] + " with " + str(data['away_player_best_blocks_avg']) + " per game.")
                 ]
             html += f'\n<ul>\n<li>{list2_rn.join(article_team2_leader)}</li>\n</ul>'
             html += "\n<h2>" + data['Team 2 (T2)'] + " Season Stats</h2>"
@@ -762,7 +762,7 @@ class NBA_Article(Sitpicks):
                 article_team2_injury += "\n" + injury['name'] + ": " + injury['status'] + " (" + injury['desc'] + ")<br>"
             html += "\n<strong>" + data['Team 2 (T2)'].split()[-1] + ": </strong>" + article_team2_injury
             html += "\n<h2>Betting Tips for " + data['Team 1 (T1)'].split()[-1] + " vs " + data['Team 2 (T2)'].split()[-1] + "</h2>"
-            html += Sitpicks.generate_response(self, "\nWe have the " + data['Team 1 (T1)'].split()[-1] + " ("+data['spread']+") predicted as our best bet in this game. Our computer model has the scoring going over the total of "+data['total_over_under']+" points, finishing with the final outcome of " + data['Team 1 (T1)'] + " " + data['spread']+ "." )
+            html += Betpicks.generate_response(self, "\nWe have the " + data['Team 1 (T1)'].split()[-1] + " ("+data['spread']+") predicted as our best bet in this game. Our computer model has the scoring going over the total of "+data['total_over_under']+" points, finishing with the final outcome of " + data['Team 1 (T1)'] + " " + data['spread']+ "." )
 
             match_teams = data['Match']
             match_teams = match_teams.replace(" ","_")
@@ -775,7 +775,7 @@ class NBA_Article(Sitpicks):
             except Exception:
                 pass
             images_folder_path = IMAGESPATH + "/NBA_Images"
-            thumbnail = Sitpicks.get_article_thumbnail(self, images_folder_path, str(data['Team 1 (T1)'].split()[-1]))
+            thumbnail = Betpicks.get_article_thumbnail(self, images_folder_path, str(data['Team 1 (T1)'].split()[-1]))
             current_path = SAVEDIRPATH + "/NBA/"
             try:
                 shutil.copy(thumbnail[1], current_path)
@@ -903,7 +903,7 @@ class NBA_Article(Sitpicks):
             except Exception:
                 pass
             images_folder_path = IMAGESPATH + "/NBA_Images"
-            thumbnail = Sitpicks.get_article_thumbnail(self, images_folder_path, str(data['Team 1 (T1)'].split()[-1]))
+            thumbnail = Betpicks.get_article_thumbnail(self, images_folder_path, str(data['Team 1 (T1)'].split()[-1]))
             current_path = SAVEDIRPATH + "/NBA/"
             try:
                 shutil.copy(thumbnail[1], current_path)
@@ -924,7 +924,7 @@ class NBA_Article(Sitpicks):
         # api-endpoint
         URL = "http://api.sportradar.us/nba/trial/v7/en/games/" + self.YEAR + "/" + self.MONTH + "/" + self.DAY + "/schedule.json?api_key=" + self.API_KEY
         # Game Info
-        data = Sitpicks.get_games_info(self, URL)
+        data = Betpicks.get_games_info(self, URL)
         if data.__contains__('games'):
             games = data['games']
             games_data_article = []
@@ -941,7 +941,7 @@ class NBA_Article(Sitpicks):
                     \n\nWe understand that you were expecting a detailed article for this match, and we apologize that we could not deliver on this occasion. We apologize once again for any inconvenience caused, and we thank you for your understanding. If you have any questions or concerns, please do not hesitate to reach out to us.\
                     \n\nBest regards,\
                     \n\nAutomated Articles Bot\
-                    \nSitpicks')
+                    \nBetpicks')
                     msg['Subject'] = 'Match Article Not Generated Due to Unnecessary Status'
                     msg['From'] = 'contact@sportsinformationtraders.com'
                     msg['To'] = 'sportsinformationtraders@gmail.com'
@@ -975,7 +975,7 @@ class NBA_Article(Sitpicks):
 
                 """Home Team Profile"""
                 URL = "http://api.sportradar.us/nba/trial/v7/en/teams/" + team_home_id + "/profile.json?api_key=" + self.API_KEY
-                home_team_profile = Sitpicks.get_data_request(self, URL)
+                home_team_profile = Betpicks.get_data_request(self, URL)
                 home_players = home_team_profile['players']
                 home_players_names = []
                 for players in home_players:
@@ -985,7 +985,7 @@ class NBA_Article(Sitpicks):
                 SEASON_TYPE = "REG"
                 YEAR = "2022"
                 URL = "http://api.sportradar.us/nba/trial/v7/en/seasons/" + YEAR + "/" + SEASON_TYPE + "/teams/" + team_home_id + "/statistics.json?api_key=" + self.API_KEY
-                home_season_stats = Sitpicks.get_data_request(self, URL)
+                home_season_stats = Betpicks.get_data_request(self, URL)
                 home_field_goal = home_season_stats['own_record']['average']['field_goals_made']
                 home_opp_field_goal = home_season_stats['opponents']['average']['field_goals_made']
                 home_rebounds = home_season_stats['own_record']['average']['rebounds']
@@ -1016,7 +1016,7 @@ class NBA_Article(Sitpicks):
 
                 """Away Team Profile"""
                 URL = "http://api.sportradar.us/nba/trial/v7/en/teams/" + team_away_id + "/profile.json?api_key=" + self.API_KEY
-                away_team_profile = Sitpicks.get_data_request(self, URL)
+                away_team_profile = Betpicks.get_data_request(self, URL)
                 away_players = away_team_profile['players']
                 away_players_names = []
                 for players in away_players:
@@ -1026,7 +1026,7 @@ class NBA_Article(Sitpicks):
                 SEASON_TYPE = "REG"
                 YEAR = "2022"
                 URL = "http://api.sportradar.us/nba/trial/v7/en/seasons/" + YEAR + "/" + SEASON_TYPE + "/teams/" + team_away_id + "/statistics.json?api_key=" + self.API_KEY
-                away_season_stats = Sitpicks.get_data_request(self, URL)
+                away_season_stats = Betpicks.get_data_request(self, URL)
                 away_field_goal = away_season_stats['own_record']['average']['field_goals_made']
                 away_opp_field_goal = away_season_stats['opponents']['average']['field_goals_made']
                 away_rebounds = away_season_stats['own_record']['average']['rebounds']
@@ -1069,7 +1069,7 @@ class NBA_Article(Sitpicks):
                 home_injuries = []
                 away_injuries = []
                 URL = "http://api.sportradar.us/nba/trial/v7/en/league/injuries.json?api_key=" + self.API_KEY
-                season_injury_data = Sitpicks.get_data_request(self, URL)
+                season_injury_data = Betpicks.get_data_request(self, URL)
                 season_injury_data = season_injury_data['teams']
                 for player_injury in season_injury_data:
                     if player_injury['id'] == team_home_id:
@@ -1093,7 +1093,7 @@ class NBA_Article(Sitpicks):
 
                 """ODDs Data"""
                 URL = "https://api.sportradar.us/oddscomparison-ust1/en/eu/sport_events/" + game_sr_id + "/markets.json?api_key=" + self.ODDS_API_KEY
-                odds_data = Sitpicks.get_data_request(self, URL)
+                odds_data = Betpicks.get_data_request(self, URL)
                 odds_data = odds_data['sport_event']['consensus']['lines']
 
                 spread = "-"
@@ -1214,7 +1214,7 @@ class NBA_Article(Sitpicks):
             print("Data not Found")
 
 
-class NHL_Article(Sitpicks):
+class NHL_Article(Betpicks):
     
     def __init__(self):
         article_date = date.today()
@@ -1237,14 +1237,14 @@ class NHL_Article(Sitpicks):
         for data in games_data_article:
             html = "<head><meta charset='UTF-8'><meta name='keywords' content='HTML, CSS, JavaScript'></head>"
             if data["Game Number"] == 1: 
-                html += Sitpicks.generate_response(self, "The " + data["Team 1 (T1)"] + " are set for Game 1 on " + str(data["Game Day"]) + " against the " + data["Team 2 (T2)"] + ", beginning at " + str(data["Game Time"]) + " ET. The oddsmakers have made the " + data["favorite_team"] + " solid favorites at " + data["favorite_moneyline"] + " on the moneyline, and the " + data["underdog_team"] + " are at " + data["underdog_moneyline"] + ". Find more below on the " + data["Team 1 (T1)"].split()[-1] + " vs. " + data["Team 2 (T2)"].split()[-1] + " betting line, injury report, head-to-head stats, best bets and more.")
+                html += Betpicks.generate_response(self, "The " + data["Team 1 (T1)"] + " are set for Game 1 on " + str(data["Game Day"]) + " against the " + data["Team 2 (T2)"] + ", beginning at " + str(data["Game Time"]) + " ET. The oddsmakers have made the " + data["favorite_team"] + " solid favorites at " + data["favorite_moneyline"] + " on the moneyline, and the " + data["underdog_team"] + " are at " + data["underdog_moneyline"] + ". Find more below on the " + data["Team 1 (T1)"].split()[-1] + " vs. " + data["Team 2 (T2)"].split()[-1] + " betting line, injury report, head-to-head stats, best bets and more.")
             else:
                 if data["Advantage Team"] is None:
-                    html += Sitpicks.generate_response(self, "On " + str(data["Game Day"]) + " the " + data["Team 1 (T1)"] + " and the " + data["Team 2 (T2)"] + " will face off in Game " + str(data["Game Number"]) + ", beginning at " + str(data["Game Time"]) + " ET. The series is currently tied " + str(data["Home Points"]) + "-" + str(data["Away Points"]) + ". The sportsbooks have made the " + data["Team 1 (T1)"].split()[-1] + " slight favorites at xx on the moneyline, and the " + data["Team 2 (T2)"].split()[-1] + " are at xx. Find more below on the " + data["Match"] + " betting line, injury report, head-to-head stats, best bets and more.")
+                    html += Betpicks.generate_response(self, "On " + str(data["Game Day"]) + " the " + data["Team 1 (T1)"] + " and the " + data["Team 2 (T2)"] + " will face off in Game " + str(data["Game Number"]) + ", beginning at " + str(data["Game Time"]) + " ET. The series is currently tied " + str(data["Home Points"]) + "-" + str(data["Away Points"]) + ". The sportsbooks have made the " + data["Team 1 (T1)"].split()[-1] + " slight favorites at xx on the moneyline, and the " + data["Team 2 (T2)"].split()[-1] + " are at xx. Find more below on the " + data["Match"] + " betting line, injury report, head-to-head stats, best bets and more.")
                 elif data["Advantage Team"] == data["Team 1 (T1)"]:
-                    html += Sitpicks.generate_response(self, "On " + str(data["Game Day"]) + " the " + data["Team 1 (T1)"] + " and the " + data["Team 2 (T2)"] + " will face off in Game " + str(data["Game Number"]) + ", beginning at " + str(data["Game Time"]) + " ET. The " + data["Team 1 (T1)"].split()[-1] + " have a " + str(data["Home Points"]) + "-" + str(data["Away Points"]) + " edge in the series. The sportsbooks have made the " + data["Team 1 (T1)"].split()[-1] + " slight favorites at xx on the moneyline, and the " + data["Team 2 (T2)"].split()[-1] + " are at xx. Find more below on the " + data["Match"] + " betting line, injury report, head-to-head stats, best bets and more.")
+                    html += Betpicks.generate_response(self, "On " + str(data["Game Day"]) + " the " + data["Team 1 (T1)"] + " and the " + data["Team 2 (T2)"] + " will face off in Game " + str(data["Game Number"]) + ", beginning at " + str(data["Game Time"]) + " ET. The " + data["Team 1 (T1)"].split()[-1] + " have a " + str(data["Home Points"]) + "-" + str(data["Away Points"]) + " edge in the series. The sportsbooks have made the " + data["Team 1 (T1)"].split()[-1] + " slight favorites at xx on the moneyline, and the " + data["Team 2 (T2)"].split()[-1] + " are at xx. Find more below on the " + data["Match"] + " betting line, injury report, head-to-head stats, best bets and more.")
                 else:
-                    html += Sitpicks.generate_response(self, "On " + str(data["Game Day"]) + " the " + data["Team 1 (T1)"] + " and the " + data["Team 2 (T2)"] + " will face off in Game " + str(data["Game Number"]) + ", beginning at " + str(data["Game Time"]) + " ET. The " + data["Team 2 (T2)"].split()[-1] + " have a " + str(data["Home Points"]) + "-" + str(data["Away Points"]) + " edge in the series. The sportsbooks have made the " + data["Team 2 (T2)"].split()[-1] + " slight favorites at xx on the moneyline, and the " + data["Team 1 (T1)"].split()[-1] + " are at xx. Find more below on the " + data["Match"] + " betting line, injury report, head-to-head stats, best bets and more.")
+                    html += Betpicks.generate_response(self, "On " + str(data["Game Day"]) + " the " + data["Team 1 (T1)"] + " and the " + data["Team 2 (T2)"] + " will face off in Game " + str(data["Game Number"]) + ", beginning at " + str(data["Game Time"]) + " ET. The " + data["Team 2 (T2)"].split()[-1] + " have a " + str(data["Home Points"]) + "-" + str(data["Away Points"]) + " edge in the series. The sportsbooks have made the " + data["Team 2 (T2)"].split()[-1] + " slight favorites at xx on the moneyline, and the " + data["Team 1 (T1)"].split()[-1] + " are at xx. Find more below on the " + data["Match"] + " betting line, injury report, head-to-head stats, best bets and more.")
             html += "\n<h2>" + data['Team 1 (T1)'].split()[-1] + " vs " + data['Team 2 (T2)'].split()[-1] + " Spread and Betting Line</h2>"
             html += '\n<table class="table"><caption>' + data['Team 1 (T1)'].split()[-1] + ' vs ' + data['Team 2 (T2)'].split()[-1] + ' Betting Information</caption>'
             table1_col = ["Favorite", "Moneyline", "Underdog", "Moneyline"]
@@ -1266,64 +1266,64 @@ class NHL_Article(Sitpicks):
             html += f'\n<tbody>\n<tr>\n<td>{table2_rn.join(table2_row)}</td>\n</tr>\n</tbody>\n</table>'
             # html += "\n<h2>" + data['Team 1 (T1)'].split()[-1] + " vs " + data['Team 2 (T2)'].split()[-1] + " Betting Trends</h2>"
             # article_betting_trends = [
-            #     Sitpicks.generate_response(self, "Through xx games as the moneyline favorite this season, " + data["favorite_team"] + " has won xx times."), 
-            #     Sitpicks.generate_response(self, "The " + data["favorite_team"] + " have won xx of the xx games they have played with moneyline odds shorter than xx."), 
-            #     Sitpicks.generate_response(self, "There is a " + str(data["win_pct_ml_f"]) + "% chance that " + data["favorite_team"] + " wins this contest, per the moneyline.")
+            #     Betpicks.generate_response(self, "Through xx games as the moneyline favorite this season, " + data["favorite_team"] + " has won xx times."), 
+            #     Betpicks.generate_response(self, "The " + data["favorite_team"] + " have won xx of the xx games they have played with moneyline odds shorter than xx."), 
+            #     Betpicks.generate_response(self, "There is a " + str(data["win_pct_ml_f"]) + "% chance that " + data["favorite_team"] + " wins this contest, per the moneyline.")
             # ]
             list2_rn = '</li>\n<li>'
             # html += f'\n<ul>\n<li>{list2_rn.join(article_betting_trends)}</li>\n</ul>'
             html += "\n<h2>" + data['Team 1 (T1)'] + " Leaders</h2>"
             article_team1_leader = [
-                Sitpicks.generate_response(self, data['Player Stats (T1)'][0]['home_top_season_player_name'] + " has been a major player for "+ data['Team 1 (T1)'].split()[-1] + " this season, with " + str(data['Player Stats (T1)'][0]['home_top_season_points']) + " points in " + str(data['Player Stats (T1)'][0]['home_top_season_games_played']) + " games."),
-                Sitpicks.generate_response(self, "Through " + str(data['Player Stats (T1)'][1]['home_top_season_games_played']) + " games, " + data['Player Stats (T1)'][1]['home_top_season_player_name'] + " has " + str(data['Player Stats (T1)'][1]['home_top_season_goals']) + " goals and " + str(data['Player Stats (T1)'][1]['home_top_season_assists']) + " assists."),
-                Sitpicks.generate_response(self, data['Player Stats (T1)'][2]['home_top_season_player_name'] + "season total of " + str(data['Player Stats (T1)'][2]['home_top_season_points']) + " points has come from " + str(data['Player Stats (T1)'][2]['home_top_season_goals']) + " goals and " + str(data['Player Stats (T1)'][2]['home_top_season_assists']) + " assists."),
-                Sitpicks.generate_response(self, data['Player Stats (T1)'][3]['home_top_season_player_name'] + " has a record of " + str(data['Player Stats (T1)'][3]['home_top_season_points']) + " points. He has blocked " + str(data['Player Stats (T1)'][3]['home_top_season_blocks']) + " goals with a " + str(round(data['Player Stats (T1)'][3]['home_top_season_takeaway_pct'],1)) + "% save percentage."),
-                Sitpicks.generate_response(self, data["Goal Keeper Stats (T1)"]['Name'] + " has a record of " + data["Goal Keeper Stats (T1)"]['Record'] + ". He has conceded " + str(data["Goal Keeper Stats (T1)"]['Conceded Goals']) + " goals (" + str(data["Goal Keeper Stats (T1)"]['Avg Goals']) + " goals against average) and racked up " + str(data["Goal Keeper Stats (T1)"]['Saved Goals']) + " saves with a " + str(data["Goal Keeper Stats (T1)"]['Save Pct']) + " save percentage (xx-best in the league).")
+                Betpicks.generate_response(self, data['Player Stats (T1)'][0]['home_top_season_player_name'] + " has been a major player for "+ data['Team 1 (T1)'].split()[-1] + " this season, with " + str(data['Player Stats (T1)'][0]['home_top_season_points']) + " points in " + str(data['Player Stats (T1)'][0]['home_top_season_games_played']) + " games."),
+                Betpicks.generate_response(self, "Through " + str(data['Player Stats (T1)'][1]['home_top_season_games_played']) + " games, " + data['Player Stats (T1)'][1]['home_top_season_player_name'] + " has " + str(data['Player Stats (T1)'][1]['home_top_season_goals']) + " goals and " + str(data['Player Stats (T1)'][1]['home_top_season_assists']) + " assists."),
+                Betpicks.generate_response(self, data['Player Stats (T1)'][2]['home_top_season_player_name'] + "season total of " + str(data['Player Stats (T1)'][2]['home_top_season_points']) + " points has come from " + str(data['Player Stats (T1)'][2]['home_top_season_goals']) + " goals and " + str(data['Player Stats (T1)'][2]['home_top_season_assists']) + " assists."),
+                Betpicks.generate_response(self, data['Player Stats (T1)'][3]['home_top_season_player_name'] + " has a record of " + str(data['Player Stats (T1)'][3]['home_top_season_points']) + " points. He has blocked " + str(data['Player Stats (T1)'][3]['home_top_season_blocks']) + " goals with a " + str(round(data['Player Stats (T1)'][3]['home_top_season_takeaway_pct'],1)) + "% save percentage."),
+                Betpicks.generate_response(self, data["Goal Keeper Stats (T1)"]['Name'] + " has a record of " + data["Goal Keeper Stats (T1)"]['Record'] + ". He has conceded " + str(data["Goal Keeper Stats (T1)"]['Conceded Goals']) + " goals (" + str(data["Goal Keeper Stats (T1)"]['Avg Goals']) + " goals against average) and racked up " + str(data["Goal Keeper Stats (T1)"]['Saved Goals']) + " saves with a " + str(data["Goal Keeper Stats (T1)"]['Save Pct']) + " save percentage (xx-best in the league).")
             ]
             html += f'\n<ul>\n<li>{list2_rn.join(article_team1_leader)}</li>\n</ul>'
             html += "\n<h2>" + data['Team 1 (T1)'] + " Season Stats</h2>"
             article_team1_stats = [
-                Sitpicks.generate_response(self, data['Team 1 (T1)'].split()[-1] + "’s " + str(data["Total Goals (T1)"]) + " goals this season make them the one of the best scoring team in the league."),
-                Sitpicks.generate_response(self, data['Team 1 (T1)'].split()[-1] + " are ranked xx in NHL action for the fewest goals against this season, having conceded " + str(data["Opp. Total Goals (T1)"]) + " total goals (" + str(data["Avg goals against (T1)"]) + " per game)."),
-                Sitpicks.generate_response(self, "With a " + str(data["Goals Diff (T1)"]) + " goal differential, they’re ranked one of the best in the NHL."),
-                Sitpicks.generate_response(self, "The " + str(data["Powerplay Goals (T1)"]) + " power-play goals" + data['Team 1 (T1)'].split()[-1] + " have put up this season (on " + str(data["Powerplay Shots (T1)"]) + " power-play chances) lead the league."),
-                Sitpicks.generate_response(self, data['Team 1 (T1)'].split()[-1] + "’s " + str(data["Powerplay Conversation (T1)"]) + "% power-play conversion rate ranks amoung the best in the NHL this season."),
-                Sitpicks.generate_response(self, data['Team 1 (T1)'].split()[-1] + "’s offense has scored " + str(data["Shorthanded Goals (T1)"]) + " shorthanded goals this season."),
-                Sitpicks.generate_response(self, data['Team 1 (T1)'].split()[-1] + " have the league’s xxth-ranked penalty-kill percentage at " + str(round(data["Penalty Goals Pct (T1)"],1)) + "%."),
-                Sitpicks.generate_response(self, data['Team 1 (T1)'].split()[-1] + " win " + str(round(data["Faceoffs Pct (T1)"],1)) + "% of their faceoffs (xxth in the league)."),
-                Sitpicks.generate_response(self, data['Team 1 (T1)'].split()[-1] + " have a " + str(round(data["Evenstrength Pct (T1)"],1)) + "% shooting percentage as a squad, ranking xx in the NHL."),
-                Sitpicks.generate_response(self, data['Team 1 (T1)'].split()[-1] + "’s players are looking for their shutout win this season. As a team, they are averaging " + str(data["Average Hit (T1)"]) + " hits and " + str(data["Average Blocked (T1)"]) + " blocked shots per game.")
+                Betpicks.generate_response(self, data['Team 1 (T1)'].split()[-1] + "’s " + str(data["Total Goals (T1)"]) + " goals this season make them the one of the best scoring team in the league."),
+                Betpicks.generate_response(self, data['Team 1 (T1)'].split()[-1] + " are ranked xx in NHL action for the fewest goals against this season, having conceded " + str(data["Opp. Total Goals (T1)"]) + " total goals (" + str(data["Avg goals against (T1)"]) + " per game)."),
+                Betpicks.generate_response(self, "With a " + str(data["Goals Diff (T1)"]) + " goal differential, they’re ranked one of the best in the NHL."),
+                Betpicks.generate_response(self, "The " + str(data["Powerplay Goals (T1)"]) + " power-play goals" + data['Team 1 (T1)'].split()[-1] + " have put up this season (on " + str(data["Powerplay Shots (T1)"]) + " power-play chances) lead the league."),
+                Betpicks.generate_response(self, data['Team 1 (T1)'].split()[-1] + "’s " + str(data["Powerplay Conversation (T1)"]) + "% power-play conversion rate ranks amoung the best in the NHL this season."),
+                Betpicks.generate_response(self, data['Team 1 (T1)'].split()[-1] + "’s offense has scored " + str(data["Shorthanded Goals (T1)"]) + " shorthanded goals this season."),
+                Betpicks.generate_response(self, data['Team 1 (T1)'].split()[-1] + " have the league’s xxth-ranked penalty-kill percentage at " + str(round(data["Penalty Goals Pct (T1)"],1)) + "%."),
+                Betpicks.generate_response(self, data['Team 1 (T1)'].split()[-1] + " win " + str(round(data["Faceoffs Pct (T1)"],1)) + "% of their faceoffs (xxth in the league)."),
+                Betpicks.generate_response(self, data['Team 1 (T1)'].split()[-1] + " have a " + str(round(data["Evenstrength Pct (T1)"],1)) + "% shooting percentage as a squad, ranking xx in the NHL."),
+                Betpicks.generate_response(self, data['Team 1 (T1)'].split()[-1] + "’s players are looking for their shutout win this season. As a team, they are averaging " + str(data["Average Hit (T1)"]) + " hits and " + str(data["Average Blocked (T1)"]) + " blocked shots per game.")
             ]
             html += f'\n<ul>\n<li>{list2_rn.join(article_team1_stats)}</li>\n</ul>'
             # html += "\n<h2>" + data['Team 2 (T2)'].split()[-1] + " vs " + data['Team 1 (T1)'].split()[-1] + " Betting Trends</h2>"
             # article_betting_trends_1 = [
-            #     Sitpicks.generate_response(self, "The " + data["underdog_team"] + " have claimed an upset victory in xx, or xx%, of the xx games they have played as an underdog this season."), 
-            #     Sitpicks.generate_response(self, data["favorite_team"] + " has played with moneyline odds of " + data["spread"] + " or longer once this season and lost that game."), 
-            #     Sitpicks.generate_response(self, "The " + data["underdog_team"] + " have a " + str(round(data["win_pct_total_ud"],1)) + "% chance to win this game (implied from the moneyline).")
+            #     Betpicks.generate_response(self, "The " + data["underdog_team"] + " have claimed an upset victory in xx, or xx%, of the xx games they have played as an underdog this season."), 
+            #     Betpicks.generate_response(self, data["favorite_team"] + " has played with moneyline odds of " + data["spread"] + " or longer once this season and lost that game."), 
+            #     Betpicks.generate_response(self, "The " + data["underdog_team"] + " have a " + str(round(data["win_pct_total_ud"],1)) + "% chance to win this game (implied from the moneyline).")
             # ]
             # list3_rn = '</li>\n<li>'
             # html += f'\n<ul>\n<li>{list3_rn.join(article_betting_trends_1)}</li>\n</ul>'
             html += "\n<h2>" + data['Team 2 (T2)'] + " Leaders</h2>"
             article_team2_leader = [
-                Sitpicks.generate_response(self, data['Player Stats (T2)'][0]['away_top_season_player_name'] + " has been a major player for "+ data['Team 2 (T2)'].split()[-1] + " this season, with " + str(data['Player Stats (T2)'][0]['away_top_season_points']) + " points in " + str(data['Player Stats (T2)'][0]['away_top_season_games_played']) + " games."),
-                Sitpicks.generate_response(self, "Through " + str(data['Player Stats (T2)'][1]['away_top_season_games_played']) + " games, " + data['Player Stats (T2)'][1]['away_top_season_player_name'] + " has " + str(data['Player Stats (T2)'][1]['away_top_season_goals']) + " goals and " + str(data['Player Stats (T2)'][1]['away_top_season_assists']) + " assists."),
-                Sitpicks.generate_response(self, data['Player Stats (T2)'][2]['away_top_season_player_name'] + "season total of " + str(data['Player Stats (T2)'][2]['away_top_season_points']) + " points has come from " + str(data['Player Stats (T2)'][2]['away_top_season_goals']) + " goals and " + str(data['Player Stats (T2)'][2]['away_top_season_assists']) + " assists."),
-                Sitpicks.generate_response(self, data['Player Stats (T2)'][3]['away_top_season_player_name'] + " has a record of " + str(data['Player Stats (T2)'][3]['away_top_season_points']) + " points. He has blocked " + str(data['Player Stats (T2)'][3]['away_top_season_blocks']) + " goals with a " + str(round(data['Player Stats (T2)'][3]['away_top_season_takeaway_pct'],1)) + "% save percentage."),
-                Sitpicks.generate_response(self, data["Goal Keeper Stats (T2)"]['Name'] + " has a record of " + data["Goal Keeper Stats (T2)"]['Record'] + ". He has conceded " + str(data["Goal Keeper Stats (T2)"]['Conceded Goals']) + " goals (" + str(data["Goal Keeper Stats (T2)"]['Avg Goals']) + " goals against average) and racked up " + str(data["Goal Keeper Stats (T2)"]['Saved Goals']) + " saves with a " + str(data["Goal Keeper Stats (T2)"]['Save Pct']) + " save percentage (xx-best in the league).")
+                Betpicks.generate_response(self, data['Player Stats (T2)'][0]['away_top_season_player_name'] + " has been a major player for "+ data['Team 2 (T2)'].split()[-1] + " this season, with " + str(data['Player Stats (T2)'][0]['away_top_season_points']) + " points in " + str(data['Player Stats (T2)'][0]['away_top_season_games_played']) + " games."),
+                Betpicks.generate_response(self, "Through " + str(data['Player Stats (T2)'][1]['away_top_season_games_played']) + " games, " + data['Player Stats (T2)'][1]['away_top_season_player_name'] + " has " + str(data['Player Stats (T2)'][1]['away_top_season_goals']) + " goals and " + str(data['Player Stats (T2)'][1]['away_top_season_assists']) + " assists."),
+                Betpicks.generate_response(self, data['Player Stats (T2)'][2]['away_top_season_player_name'] + "season total of " + str(data['Player Stats (T2)'][2]['away_top_season_points']) + " points has come from " + str(data['Player Stats (T2)'][2]['away_top_season_goals']) + " goals and " + str(data['Player Stats (T2)'][2]['away_top_season_assists']) + " assists."),
+                Betpicks.generate_response(self, data['Player Stats (T2)'][3]['away_top_season_player_name'] + " has a record of " + str(data['Player Stats (T2)'][3]['away_top_season_points']) + " points. He has blocked " + str(data['Player Stats (T2)'][3]['away_top_season_blocks']) + " goals with a " + str(round(data['Player Stats (T2)'][3]['away_top_season_takeaway_pct'],1)) + "% save percentage."),
+                Betpicks.generate_response(self, data["Goal Keeper Stats (T2)"]['Name'] + " has a record of " + data["Goal Keeper Stats (T2)"]['Record'] + ". He has conceded " + str(data["Goal Keeper Stats (T2)"]['Conceded Goals']) + " goals (" + str(data["Goal Keeper Stats (T2)"]['Avg Goals']) + " goals against average) and racked up " + str(data["Goal Keeper Stats (T2)"]['Saved Goals']) + " saves with a " + str(data["Goal Keeper Stats (T2)"]['Save Pct']) + " save percentage (xx-best in the league).")
             ]
             html += f'\n<ul>\n<li>{list2_rn.join(article_team2_leader)}</li>\n</ul>'
             html += "\n<h2>" + data['Team 2 (T2)'] + " Season Stats</h2>"
             article_team2_stats = [
-                Sitpicks.generate_response(self, data['Team 2 (T2)'].split()[-1] + "’s " + str(data["Total Goals (T2)"]) + " goals this season make them the one of the best scoring team in the league."),
-                Sitpicks.generate_response(self, data['Team 2 (T2)'].split()[-1] + "are ranked xx in NHL action for the fewest goals against this season, having conceded " + str(data["Opp. Total Goals (T2)"]) + " total goals (" + str(data["Avg goals against (T2)"]) + " per game)."),
-                Sitpicks.generate_response(self, "With a " + str(data["Goals Diff (T2)"]) + " goal differential, they’re ranked one of the best in the NHL."),
-                Sitpicks.generate_response(self, "The " + str(data["Powerplay Goals (T2)"]) + " power-play goals" + data['Team 2 (T2)'].split()[-1] + " have put up this season (on " + str(data["Powerplay Shots (T2)"]) + " power-play chances) lead the league."),
-                Sitpicks.generate_response(self, data['Team 2 (T2)'].split()[-1] + "’s " + str(data["Powerplay Conversation (T2)"]) + "% power-play conversion rate ranks amoung the best in the NHL this season."),
-                Sitpicks.generate_response(self, data['Team 2 (T2)'].split()[-1] + "’s offense has scored " + str(data["Shorthanded Goals (T2)"]) + " shorthanded goals this season."),
-                Sitpicks.generate_response(self, data['Team 2 (T2)'].split()[-1] + " have the league’s xxth-ranked penalty-kill percentage at " + str(round(data["Penalty Goals Pct (T2)"],1)) + "%."),
-                Sitpicks.generate_response(self, data['Team 2 (T2)'].split()[-1] + " win " + str(data["Faceoffs Pct (T2)"]) + "% of their faceoffs (xxth in the league)."),
-                Sitpicks.generate_response(self, data['Team 2 (T2)'].split()[-1] + " have a " + str(round(data["Evenstrength Pct (T2)"],1)) + "% shooting percentage as a squad, ranking xx in the NHL."),
-                Sitpicks.generate_response(self, data['Team 2 (T2)'].split()[-1] + "’s players are looking for their shutout win this season. As a team, they are averaging " + str(data["Average Hit (T2)"]) + " hits and " + str(data["Average Blocked (T2)"]) + " blocked shots per game.")
+                Betpicks.generate_response(self, data['Team 2 (T2)'].split()[-1] + "’s " + str(data["Total Goals (T2)"]) + " goals this season make them the one of the best scoring team in the league."),
+                Betpicks.generate_response(self, data['Team 2 (T2)'].split()[-1] + "are ranked xx in NHL action for the fewest goals against this season, having conceded " + str(data["Opp. Total Goals (T2)"]) + " total goals (" + str(data["Avg goals against (T2)"]) + " per game)."),
+                Betpicks.generate_response(self, "With a " + str(data["Goals Diff (T2)"]) + " goal differential, they’re ranked one of the best in the NHL."),
+                Betpicks.generate_response(self, "The " + str(data["Powerplay Goals (T2)"]) + " power-play goals" + data['Team 2 (T2)'].split()[-1] + " have put up this season (on " + str(data["Powerplay Shots (T2)"]) + " power-play chances) lead the league."),
+                Betpicks.generate_response(self, data['Team 2 (T2)'].split()[-1] + "’s " + str(data["Powerplay Conversation (T2)"]) + "% power-play conversion rate ranks amoung the best in the NHL this season."),
+                Betpicks.generate_response(self, data['Team 2 (T2)'].split()[-1] + "’s offense has scored " + str(data["Shorthanded Goals (T2)"]) + " shorthanded goals this season."),
+                Betpicks.generate_response(self, data['Team 2 (T2)'].split()[-1] + " have the league’s xxth-ranked penalty-kill percentage at " + str(round(data["Penalty Goals Pct (T2)"],1)) + "%."),
+                Betpicks.generate_response(self, data['Team 2 (T2)'].split()[-1] + " win " + str(data["Faceoffs Pct (T2)"]) + "% of their faceoffs (xxth in the league)."),
+                Betpicks.generate_response(self, data['Team 2 (T2)'].split()[-1] + " have a " + str(round(data["Evenstrength Pct (T2)"],1)) + "% shooting percentage as a squad, ranking xx in the NHL."),
+                Betpicks.generate_response(self, data['Team 2 (T2)'].split()[-1] + "’s players are looking for their shutout win this season. As a team, they are averaging " + str(data["Average Hit (T2)"]) + " hits and " + str(data["Average Blocked (T2)"]) + " blocked shots per game.")
             ]
             html += f'\n<ul>\n<li>{list2_rn.join(article_team2_stats)}</li>\n</ul>'
             html += "\n<h2>" + data['Team 1 (T1)'].split()[-1] + " vs " + data['Team 2 (T2)'].split()[-1] + " Injury Report</h2>"
@@ -1336,7 +1336,7 @@ class NHL_Article(Sitpicks):
                 article_team2_injury += "\n" + injury['name'] + ": " + injury['status'] + " (" + injury['desc'] + ")<br>"
             html += "\n<strong>" + data['Team 2 (T2)'].split()[-1] + ": </strong>" + article_team2_injury
             html += "\n<h2>Betting Tips for " + data['Team 1 (T1)'].split()[-1] + " vs " + data['Team 2 (T2)'].split()[-1] + "</h2>"
-            html += Sitpicks.generate_response(self, "\nWe have the " + data['favorite_team'] + " (" + str(data['spread']) + ") predicted as our best bet in this game. Our computer model has the scoring going over the total of xx points, with the teams finishing with a final score of " + data['Team 1 (T1)'].split()[-1] + " xx, " + data['Team 2 (T2)'].split()[-1] + " xx when it’s sorted out on the court.")
+            html += Betpicks.generate_response(self, "\nWe have the " + data['favorite_team'] + " (" + str(data['spread']) + ") predicted as our best bet in this game. Our computer model has the scoring going over the total of xx points, with the teams finishing with a final score of " + data['Team 1 (T1)'].split()[-1] + " xx, " + data['Team 2 (T2)'].split()[-1] + " xx when it’s sorted out on the court.")
 
             match_teams = data['Match']
             match_teams = match_teams.replace(" ","_")
@@ -1349,7 +1349,7 @@ class NHL_Article(Sitpicks):
             except Exception:
                 pass
             images_folder_path = IMAGESPATH + "/NHL_Images"
-            thumbnail = Sitpicks.get_article_thumbnail(self, images_folder_path, str(data['Team 1 (T1)'].split()[-1]))
+            thumbnail = Betpicks.get_article_thumbnail(self, images_folder_path, str(data['Team 1 (T1)'].split()[-1]))
             current_path = SAVEDIRPATH + "/NHL/"
             try:
                 shutil.copy(thumbnail[1], current_path)
@@ -1476,7 +1476,7 @@ class NHL_Article(Sitpicks):
             except Exception:
                 pass
             images_folder_path = IMAGESPATH + "/NHL_Images"
-            thumbnail = Sitpicks.get_article_thumbnail(self, images_folder_path, str(data['Team 1 (T1)'].split()[-1]))
+            thumbnail = Betpicks.get_article_thumbnail(self, images_folder_path, str(data['Team 1 (T1)'].split()[-1]))
             current_path = SAVEDIRPATH + "/NHL/"
             try:
                 shutil.copy(thumbnail[1], current_path)
@@ -1498,7 +1498,7 @@ class NHL_Article(Sitpicks):
         URL = "http://api.sportradar.us/nhl/trial/v7/en/games/" + self.YEAR + "/" + self.MONTH + "/" + self.DAY + "/schedule.json?api_key=" + self.API_KEY
         # URL = "http://api.sportradar.us/nhl/trial/v7/en/games/2023/06/10/schedule.json?api_key=" + self.API_KEY
         # Game Info
-        data = Sitpicks.get_games_info(self, URL)
+        data = Betpicks.get_games_info(self, URL)
         if data.__contains__('games'):
             games = data['games']
             games_data_article = []
@@ -1515,7 +1515,7 @@ class NHL_Article(Sitpicks):
                     \n\nWe understand that you were expecting a detailed article for this match, and we apologize that we could not deliver on this occasion. We apologize once again for any inconvenience caused, and we thank you for your understanding. If you have any questions or concerns, please do not hesitate to reach out to us.\
                     \n\nBest regards,\
                     \n\nAutomated Articles Bot\
-                    \nSitpicks')
+                    \nBetpicks')
                     msg['Subject'] = 'Match Article Not Generated Due to Unnecessary Status'
                     msg['From'] = 'contact@sportsinformationtraders.com'
                     msg['To'] = 'sportsinformationtraders@gmail.com'
@@ -1565,7 +1565,7 @@ class NHL_Article(Sitpicks):
                 
                 """Home Team Profile"""
                 URL = "http://api.sportradar.us/nhl/trial/v7/en/teams/" + team_home_id + "/profile.json?api_key=" + self.API_KEY
-                home_team_profile = Sitpicks.get_data_request(self, URL)
+                home_team_profile = Betpicks.get_data_request(self, URL)
                 home_players = home_team_profile['players']
                 home_players_names = []
                 for players in home_players:
@@ -1575,7 +1575,7 @@ class NHL_Article(Sitpicks):
                 SEASON_TYPE = "REG"
                 YEAR = "2022"
                 URL = "http://api.sportradar.us/nhl/trial/v7/en/seasons/" + YEAR + "/" + SEASON_TYPE + "/teams/" + team_home_id + "/statistics.json?api_key=" + self.API_KEY
-                home_season_stats = Sitpicks.get_data_request(self, URL)
+                home_season_stats = Betpicks.get_data_request(self, URL)
                 home_total_goals = home_season_stats['own_record']['statistics']['total']['goals']
                 home_avg_goals = home_season_stats['own_record']['statistics']['average']['goals']
                 home_opp_total_goals = home_season_stats['opponents']['statistics']['total']['goals']
@@ -1640,7 +1640,7 @@ class NHL_Article(Sitpicks):
                 
                 """Away Team Profile"""
                 URL = "http://api.sportradar.us/nhl/trial/v7/en/teams/" + team_away_id + "/profile.json?api_key=" + self.API_KEY
-                away_team_profile = Sitpicks.get_data_request(self, URL)
+                away_team_profile = Betpicks.get_data_request(self, URL)
                 away_players = away_team_profile['players']
                 away_players_names = []
                 for players in home_players:
@@ -1650,7 +1650,7 @@ class NHL_Article(Sitpicks):
                 SEASON_TYPE = "REG"
                 YEAR = "2022"
                 URL = "http://api.sportradar.us/nhl/trial/v7/en/seasons/" + YEAR + "/" + SEASON_TYPE + "/teams/" + team_away_id + "/statistics.json?api_key=" + self.API_KEY
-                away_season_stats = Sitpicks.get_data_request(self, URL)
+                away_season_stats = Betpicks.get_data_request(self, URL)
                 away_total_goals = away_season_stats['own_record']['statistics']['total']['goals']
                 away_avg_goals = away_season_stats['own_record']['statistics']['average']['goals']
                 away_opp_total_goals = away_season_stats['opponents']['statistics']['total']['goals']
@@ -1717,7 +1717,7 @@ class NHL_Article(Sitpicks):
                 home_injuries = []
                 away_injuries = []
                 URL = "http://api.sportradar.us/nhl/trial/v7/en/league/injuries.json?api_key=" + self.API_KEY
-                season_injury_data = Sitpicks.get_data_request(self, URL)
+                season_injury_data = Betpicks.get_data_request(self, URL)
                 season_injury_data = season_injury_data['teams']
                 for player_injury in season_injury_data:
                     if player_injury['id'] == team_home_id:
@@ -1741,7 +1741,7 @@ class NHL_Article(Sitpicks):
                 
                 """ODDs Data"""
                 URL = "https://api.sportradar.us/oddscomparison-ust1/en/eu/sport_events/" + game_sr_id + "/markets.json?api_key=" + self.ODDS_API_KEY
-                odds_data = Sitpicks.get_data_request(self, URL)
+                odds_data = Betpicks.get_data_request(self, URL)
                 odds_data = odds_data['sport_event']['consensus']
                 pct_data = []
                 if odds_data.__contains__('bet_percentage_outcomes'):
@@ -1921,7 +1921,7 @@ class NHL_Article(Sitpicks):
 
 
 
-class NFL_Article(Sitpicks):
+class NFL_Article(Betpicks):
 
     def __init__(self):
         print("contructor function")
@@ -2059,7 +2059,7 @@ class NFL_Article(Sitpicks):
         )[-1] + " vs. " + data["Team 2 (T2)"].split()[-1] + " betting line, injury report, head-to-head stats, best bets and more."
 
         print("Intro mini")
-        html += "\n" + Sitpicks.generate_response(self, "The " + data['favorite_team_name'].split()[-1] + " (" + str(
+        html += "\n" + Betpicks.generate_response(self, "The " + data['favorite_team_name'].split()[-1] + " (" + str(
             data["spread_odd"]) + ") are slight favorites against the " + data["underdog_team_name"].split()[-1] + ". The total is set at " + str(data["overUnder_odds"]))
 
         # SPREAD AND BETTING LINE TABLE
@@ -2111,19 +2111,19 @@ class NFL_Article(Sitpicks):
 
         print("HOME LEADERS")
         html += "\n<h2>" + data['Team 1 (T1)'] + " Leaders</h2>"
-        html += "\n<ul>\n<li>" + Sitpicks.generate_response(self, data["Team 1 (T1) passing yard leader"]["name"] + " has thrown for " + str(data["Team 1 (T1) passing yard leader"]["passing_yards"]) + " yards this season on " + str(
+        html += "\n<ul>\n<li>" + Betpicks.generate_response(self, data["Team 1 (T1) passing yard leader"]["name"] + " has thrown for " + str(data["Team 1 (T1) passing yard leader"]["passing_yards"]) + " yards this season on " + str(
             data["Team 1 (T1) passing yard leader"]["passing_attempts"]) + " attempts with " + str(data["Team 1 (T1) passing yard leader"]["passing_touchdowns"]) + " touchdowns and " + str(data["Team 1 (T1) passing yard leader"]["passing_interceptions"]) + " interceptions.")
 
-        html += "</li>\n<li>" + Sitpicks.generate_response(self, "Last season " + data["Team 1 (T1) rushing yard leader"]["name"] + " is currently leading the team in the rushing with " + str(data["Team 1 (T1) rushing yard leader last year"]["rushing_yard"]) + " yards, a long of " + str(data["Team 1 (T1) rushing yard leader last year"]["rushing_long"]) + " and  " + str(
+        html += "</li>\n<li>" + Betpicks.generate_response(self, "Last season " + data["Team 1 (T1) rushing yard leader"]["name"] + " is currently leading the team in the rushing with " + str(data["Team 1 (T1) rushing yard leader last year"]["rushing_yard"]) + " yards, a long of " + str(data["Team 1 (T1) rushing yard leader last year"]["rushing_long"]) + " and  " + str(
             data["Team 1 (T1) rushing yard leader last year"]["touchdowns"]) + "touchdowns.")
 
-        html += "</li>\n<li>" + Sitpicks.generate_response(self, data["Team 1 (T1) receiving yard leader"]["name"] + " is currently leading the team in receiving with " + str(data["Team 1 (T1) receiving yard leader"]["recieving_yard"]) + " yards on  " + str(data["Team 1 (T1) receiving yard leader"]
+        html += "</li>\n<li>" + Betpicks.generate_response(self, data["Team 1 (T1) receiving yard leader"]["name"] + " is currently leading the team in receiving with " + str(data["Team 1 (T1) receiving yard leader"]["recieving_yard"]) + " yards on  " + str(data["Team 1 (T1) receiving yard leader"]
                                                                                                                                                                                                                                                                   ["receiving_receptions"]) + " receptions and " + str(data["Team 1 (T1) receiving yard leader"]["touchdowns"]) + " touchdowns on the season.")
 
-        html += "</li>\n<li>" + Sitpicks.generate_response(self, data["Team 1 (T1) defensive sack leader"]["name"] + " leads the team in sacks so far this year with " + str(data["Team 1 (T1) defensive sack leader last year"]["defensive_sacks"]) + " sacks, along with " + str(
+        html += "</li>\n<li>" + Betpicks.generate_response(self, data["Team 1 (T1) defensive sack leader"]["name"] + " leads the team in sacks so far this year with " + str(data["Team 1 (T1) defensive sack leader last year"]["defensive_sacks"]) + " sacks, along with " + str(
             data["Team 1 (T1) defensive sack leader"]["defensive_tackles"]) + " total tackles. ")
 
-        html += "</li>\n<li>" + Sitpicks.generate_response(self, "Last season " + data["Team 1 (T1) defensive tackles leader"]["name"] + " has been a force on defence this season as he leads the team with  " + str(data["Team 1 (T1) defensive tackles leader last year"]["defensive_tackles"]) + " solo tackles, along with " + str(
+        html += "</li>\n<li>" + Betpicks.generate_response(self, "Last season " + data["Team 1 (T1) defensive tackles leader"]["name"] + " has been a force on defence this season as he leads the team with  " + str(data["Team 1 (T1) defensive tackles leader last year"]["defensive_tackles"]) + " solo tackles, along with " + str(
             data["Team 1 (T1) defensive tackles leader last year"]["defensive_sacks"]) + " sack, and " + str(data["Team 1 (T1) defensive tackles leader last year"]["tfl"]) + " interceptions.")
 
         html += "</li>\n</ul>"
@@ -2157,19 +2157,19 @@ class NFL_Article(Sitpicks):
         print("AWAY LEADERS")
 
         html += "\n<h2>" + data['Team 1 (T1)'] + " Leaders</h2>"
-        html += "\n<ul>\n<li>" + Sitpicks.generate_response(self, data["Team 2 (T2) passing yard leader"]["name"] + " has thrown for " + str(data["Team 2 (T2) passing yard leader"]["passing_yards"]) + " yards this season on " + str(
+        html += "\n<ul>\n<li>" + Betpicks.generate_response(self, data["Team 2 (T2) passing yard leader"]["name"] + " has thrown for " + str(data["Team 2 (T2) passing yard leader"]["passing_yards"]) + " yards this season on " + str(
             data["Team 2 (T2) passing yard leader"]["passing_attempts"]) + " attempts with " + str(data["Team 2 (T2) passing yard leader"]["passing_touchdowns"]) + " touchdowns and " + str(data["Team 2 (T2) passing yard leader"]["passing_interceptions"]) + " interceptions.")
 
-        html += "</li>\n<li>" + Sitpicks.generate_response(self, "Last season " + data["Team 2 (T2) rushing yard leader"]["name"] + " is currently leading the team in the rushing with " + str(data["Team 2 (T2) rushing yard leader"]["rushing_yard"]) + " yards, a long of " + str(data["Team 2 (T2) rushing yard leader"]["rushing_long"]) + " and  " + str(
+        html += "</li>\n<li>" + Betpicks.generate_response(self, "Last season " + data["Team 2 (T2) rushing yard leader"]["name"] + " is currently leading the team in the rushing with " + str(data["Team 2 (T2) rushing yard leader"]["rushing_yard"]) + " yards, a long of " + str(data["Team 2 (T2) rushing yard leader"]["rushing_long"]) + " and  " + str(
             data["Team 2 (T2) rushing yard leader"]["rushing_touchdowns"]) + "touchdowns.")
 
-        html += "</li>\n<li>" + Sitpicks.generate_response(self, data["Team 2 (T2) receiving yard leader"]["name"] + " is currently leading the team in receiving with " + str(data["Team 2 (T2) receiving yard leader"]["recieving_yard"]) + " yards on  " + str(data["Team 2 (T2) receiving yard leader"]
+        html += "</li>\n<li>" + Betpicks.generate_response(self, data["Team 2 (T2) receiving yard leader"]["name"] + " is currently leading the team in receiving with " + str(data["Team 2 (T2) receiving yard leader"]["recieving_yard"]) + " yards on  " + str(data["Team 2 (T2) receiving yard leader"]
                                                                                                                                                                                                                                                                   ["receiving_receptions"]) + " receptions and " + str(data["Team 2 (T2) receiving yard leader"]["touchdowns"]) + " touchdowns on the season.")
 
-        html += "</li>\n<li>" + Sitpicks.generate_response(self, data["Team 2 (T2) defensive sack leader"]["name"] + " leads the team in sacks so far this year with " + str(data["Team 2 (T2) defensive sack leader"]["defensive_sacks"]) + " sacks, along with " + str(
+        html += "</li>\n<li>" + Betpicks.generate_response(self, data["Team 2 (T2) defensive sack leader"]["name"] + " leads the team in sacks so far this year with " + str(data["Team 2 (T2) defensive sack leader"]["defensive_sacks"]) + " sacks, along with " + str(
             data["Team 2 (T2) defensive sack leader"]["defensive_tackles"]) + " total tackles. ")
 
-        html += "</li>\n<li>" + Sitpicks.generate_response(self, "Last season " + data["Team 2 (T2) defensive tackles leader"]["name"] + " has been a force on defence this season as he leads the team with  " + str(data["Team 2 (T2) defensive tackles leader"]["defensive_tackles"]) + " solo tackles, along with " + str(
+        html += "</li>\n<li>" + Betpicks.generate_response(self, "Last season " + data["Team 2 (T2) defensive tackles leader"]["name"] + " has been a force on defence this season as he leads the team with  " + str(data["Team 2 (T2) defensive tackles leader"]["defensive_tackles"]) + " solo tackles, along with " + str(
             data["Team 2 (T2) defensive tackles leader"]["defensive_sacks"]) + " sack, and " + str(data["Team 2 (T2) defensive tackles leader"]["defensive_intercption"]) + " interceptions.")
 
         html += "</li>\n</ul>"
@@ -2237,7 +2237,7 @@ class NFL_Article(Sitpicks):
         except Exception:
             pass
         images_folder_path = IMAGESPATH + "/NFL_Images"
-        thumbnail = Sitpicks.get_article_thumbnail(
+        thumbnail = Betpicks.get_article_thumbnail(
             self, images_folder_path, str(data['Team 1 (T1)'].split()[-1]))
         current_path = SAVEDIRPATH + "/NFL/"
         try:
@@ -2263,7 +2263,7 @@ class NFL_Article(Sitpicks):
             )[-1] + " vs. " + data["Team 2 (T2)"].split()[-1] + " betting line, injury report, head-to-head stats, best bets and more."
 
             print("Intro mini")
-            html += "\n" + Sitpicks.generate_response(self, "The " + data['favorite_team_name'].split()[-1] + " (" + str(
+            html += "\n" + Betpicks.generate_response(self, "The " + data['favorite_team_name'].split()[-1] + " (" + str(
                 data["spread_odd"]) + ") are slight favorites against the " + data["underdog_team_name"].split()[-1] + ". The total is set at " + str(data["overUnder_odds"]))
 
             # over
@@ -2318,19 +2318,19 @@ class NFL_Article(Sitpicks):
             # defensive_tackles
             print("HOME LEADERS")
             html += "\n<h2>" + data['Team 1 (T1)'] + " Leaders</h2>"
-            html += "\n<ul>\n<li>" + Sitpicks.generate_response(self, data["Team 1 (T1) passing yard leader"]["name"] + " has thrown for " + str(data["Team 1 (T1) passing yard leader"]["passing_yards"]) + " yards this season on " + str(
+            html += "\n<ul>\n<li>" + Betpicks.generate_response(self, data["Team 1 (T1) passing yard leader"]["name"] + " has thrown for " + str(data["Team 1 (T1) passing yard leader"]["passing_yards"]) + " yards this season on " + str(
                 data["Team 1 (T1) passing yard leader"]["passing_attempts"]) + " attempts with " + str(data["Team 1 (T1) passing yard leader"]["passing_touchdowns"]) + " touchdowns and " + str(data["Team 1 (T1) passing yard leader"]["passing_interceptions"]) + " interceptions.")
 
-            html += "</li>\n<li>" + Sitpicks.generate_response(self, "Last season " + data["Team 1 (T1) rushing yard leader"]["name"] + " is currently leading the team in the rushing with " + str(data["Team 1 (T1) rushing yard leader last year"]["rushing_yard"]) + " yards, a long of " + str(data["Team 1 (T1) rushing yard leader last year"]["rushing_long"]) + " and  " + str(
+            html += "</li>\n<li>" + Betpicks.generate_response(self, "Last season " + data["Team 1 (T1) rushing yard leader"]["name"] + " is currently leading the team in the rushing with " + str(data["Team 1 (T1) rushing yard leader last year"]["rushing_yard"]) + " yards, a long of " + str(data["Team 1 (T1) rushing yard leader last year"]["rushing_long"]) + " and  " + str(
                 data["Team 1 (T1) rushing yard leader last year"]["touchdowns"]) + "touchdowns.")
 
-            html += "</li>\n<li>" + Sitpicks.generate_response(self, data["Team 1 (T1) receiving yard leader"]["name"] + " is currently leading the team in receiving with " + str(data["Team 1 (T1) receiving yard leader"]["recieving_yard"]) + " yards on  " + str(data["Team 1 (T1) receiving yard leader"]
+            html += "</li>\n<li>" + Betpicks.generate_response(self, data["Team 1 (T1) receiving yard leader"]["name"] + " is currently leading the team in receiving with " + str(data["Team 1 (T1) receiving yard leader"]["recieving_yard"]) + " yards on  " + str(data["Team 1 (T1) receiving yard leader"]
                                                                                                                                                                                                                                                                         ["receiving_receptions"]) + " receptions and " + str(data["Team 1 (T1) receiving yard leader"]["touchdowns"]) + " touchdowns on the season.")
 
-            html += "</li>\n<li>" + Sitpicks.generate_response(self, data["Team 1 (T1) defensive sack leader"]["name"] + " leads the team in sacks so far this year with " + str(data["Team 1 (T1) defensive sack leader last year"]["defensive_sacks"]) + " sacks, along with " + str(
+            html += "</li>\n<li>" + Betpicks.generate_response(self, data["Team 1 (T1) defensive sack leader"]["name"] + " leads the team in sacks so far this year with " + str(data["Team 1 (T1) defensive sack leader last year"]["defensive_sacks"]) + " sacks, along with " + str(
                 data["Team 1 (T1) defensive sack leader"]["defensive_tackles"]) + " total tackles. ")
 
-            html += "</li>\n<li>" + Sitpicks.generate_response(self, "Last season " + data["Team 1 (T1) defensive tackles leader"]["name"] + " has been a force on defence this season as he leads the team with  " + str(data["Team 1 (T1) defensive tackles leader last year"]["defensive_tackles"]) + " solo tackles, along with " + str(
+            html += "</li>\n<li>" + Betpicks.generate_response(self, "Last season " + data["Team 1 (T1) defensive tackles leader"]["name"] + " has been a force on defence this season as he leads the team with  " + str(data["Team 1 (T1) defensive tackles leader last year"]["defensive_tackles"]) + " solo tackles, along with " + str(
                 data["Team 1 (T1) defensive tackles leader last year"]["defensive_sacks"]) + " sack, and " + str(data["Team 1 (T1) defensive tackles leader last year"]["tfl"]) + " interceptions.")
 
             html += "</li>\n</ul>"
@@ -2366,19 +2366,19 @@ class NFL_Article(Sitpicks):
             print("AWAY LEADERS")
 
             html += "\n<h2>" + data['Team 1 (T1)'] + " Leaders</h2>"
-            html += "\n<ul>\n<li>" + Sitpicks.generate_response(self, data["Team 2 (T2) passing yard leader"]["name"] + " has thrown for " + str(data["Team 2 (T2) passing yard leader"]["passing_yards"]) + " yards this season on " + str(
+            html += "\n<ul>\n<li>" + Betpicks.generate_response(self, data["Team 2 (T2) passing yard leader"]["name"] + " has thrown for " + str(data["Team 2 (T2) passing yard leader"]["passing_yards"]) + " yards this season on " + str(
                 data["Team 2 (T2) passing yard leader"]["passing_attempts"]) + " attempts with " + str(data["Team 2 (T2) passing yard leader"]["passing_touchdowns"]) + " touchdowns and " + str(data["Team 2 (T2) passing yard leader"]["passing_interceptions"]) + " interceptions.")
 
-            html += "</li>\n<li>" + Sitpicks.generate_response(self, "Last season " + data["Team 2 (T2) rushing yard leader"]["name"] + " is currently leading the team in the rushing with " + str(data["Team 2 (T2) rushing yard leader"]["rushing_yard"]) + " yards, a long of " + str(data["Team 2 (T2) rushing yard leader"]["rushing_long"]) + " and  " + str(
+            html += "</li>\n<li>" + Betpicks.generate_response(self, "Last season " + data["Team 2 (T2) rushing yard leader"]["name"] + " is currently leading the team in the rushing with " + str(data["Team 2 (T2) rushing yard leader"]["rushing_yard"]) + " yards, a long of " + str(data["Team 2 (T2) rushing yard leader"]["rushing_long"]) + " and  " + str(
                 data["Team 2 (T2) rushing yard leader"]["rushing_touchdowns"]) + "touchdowns.")
 
-            html += "</li>\n<li>" + Sitpicks.generate_response(self, data["Team 2 (T2) receiving yard leader"]["name"] + " is currently leading the team in receiving with " + str(data["Team 2 (T2) receiving yard leader"]["recieving_yard"]) + " yards on  " + str(data["Team 2 (T2) receiving yard leader"]
+            html += "</li>\n<li>" + Betpicks.generate_response(self, data["Team 2 (T2) receiving yard leader"]["name"] + " is currently leading the team in receiving with " + str(data["Team 2 (T2) receiving yard leader"]["recieving_yard"]) + " yards on  " + str(data["Team 2 (T2) receiving yard leader"]
                                                                                                                                                                                                                                                                         ["receiving_receptions"]) + " receptions and " + str(data["Team 2 (T2) receiving yard leader"]["touchdowns"]) + " touchdowns on the season.")
 
-            html += "</li>\n<li>" + Sitpicks.generate_response(self, data["Team 2 (T2) defensive sack leader"]["name"] + " leads the team in sacks so far this year with " + str(data["Team 2 (T2) defensive sack leader"]["defensive_sacks"]) + " sacks, along with " + str(
+            html += "</li>\n<li>" + Betpicks.generate_response(self, data["Team 2 (T2) defensive sack leader"]["name"] + " leads the team in sacks so far this year with " + str(data["Team 2 (T2) defensive sack leader"]["defensive_sacks"]) + " sacks, along with " + str(
                 data["Team 2 (T2) defensive sack leader"]["defensive_tackles"]) + " total tackles. ")
 
-            html += "</li>\n<li>" + Sitpicks.generate_response(self, "Last season " + data["Team 2 (T2) defensive tackles leader"]["name"] + " has been a force on defence this season as he leads the team with  " + str(data["Team 2 (T2) defensive tackles leader"]["defensive_tackles"]) + " solo tackles, along with " + str(
+            html += "</li>\n<li>" + Betpicks.generate_response(self, "Last season " + data["Team 2 (T2) defensive tackles leader"]["name"] + " has been a force on defence this season as he leads the team with  " + str(data["Team 2 (T2) defensive tackles leader"]["defensive_tackles"]) + " solo tackles, along with " + str(
                 data["Team 2 (T2) defensive tackles leader"]["defensive_sacks"]) + " sack, and " + str(data["Team 2 (T2) defensive tackles leader"]["defensive_intercption"]) + " interceptions.")
 
             html += "</li>\n</ul>"
@@ -2442,7 +2442,7 @@ class NFL_Article(Sitpicks):
             except Exception:
                 pass
             images_folder_path = IMAGESPATH + "/NFL_Images"
-            thumbnail = Sitpicks.find_and_select_image(
+            thumbnail = Betpicks.find_and_select_image(
                 self, images_folder_path, str(data['Team 1 (T1)'].split()[-1]))
             current_path = SAVEDIRPATH + "/NFL/Images"
             try:
@@ -2502,7 +2502,7 @@ class NFL_Article(Sitpicks):
         # Game Info
         try:
 
-            data = Sitpicks.get_games_info(self, URL)
+            data = Betpicks.get_games_info(self, URL)
             for result in data['results']:
                 print("rounds")
                 # if result['round'] == week_name:
@@ -2539,7 +2539,7 @@ class NFL_Article(Sitpicks):
                     """Game Airing"""
                     URL = "https://sportsinformationtraders.api.areyouwatchingthis.com/api/airings.json?providerID=IL63451|X&" + \
                         "&apiKey=" + self.ODDS_METABET_API_KEY
-                    game_airing = Sitpicks.get_data_request(self, URL)
+                    game_airing = Betpicks.get_data_request(self, URL)
                     game_broadcast = ""
                     for result in game_airing['results']:
                         if result['gameID'] == game_id:
@@ -2559,7 +2559,7 @@ class NFL_Article(Sitpicks):
                         str(team_home_id) + "&apiKey=" + \
                         self.ODDS_METABET_API_KEY
 
-                    home_team_profile = Sitpicks.get_data_request(self, URL)
+                    home_team_profile = Betpicks.get_data_request(self, URL)
                     home_players = home_team_profile['results']
                     home_players_names = []
                     for players in home_players:
@@ -2572,7 +2572,7 @@ class NFL_Article(Sitpicks):
                     URL = "https://sportsinformationtraders.api.areyouwatchingthis.com/api/teams.json?teamID=" + \
                         str(team_home_id) + "&apiKey=" + \
                         self.ODDS_METABET_API_KEY
-                    home_stats = Sitpicks.get_data_request(self, URL)
+                    home_stats = Betpicks.get_data_request(self, URL)
 
                     home_wins = home_stats['results'][0]['wins']
                     home_losses = home_stats['results'][0]['losses']
@@ -2583,7 +2583,7 @@ class NFL_Article(Sitpicks):
                     URL = "https://sportsinformationtraders.api.areyouwatchingthis.com/api/teams.json?teamID=" + \
                         str(team_away_id) + "&apiKey=" + \
                         self.ODDS_METABET_API_KEY
-                    away_stats = Sitpicks.get_data_request(self, URL)
+                    away_stats = Betpicks.get_data_request(self, URL)
 
                     away_wins = away_stats['results'][0]['wins']
                     away_losses = away_stats['results'][0]['losses']
@@ -2595,7 +2595,7 @@ class NFL_Article(Sitpicks):
                     URL = "https://sportsinformationtraders.api.areyouwatchingthis.com/api/players.json?teamID=" + \
                         str(team_away_id) + "&apiKey=" + \
                         self.ODDS_METABET_API_KEY
-                    away_team_profile = Sitpicks.get_data_request(self, URL)
+                    away_team_profile = Betpicks.get_data_request(self, URL)
                     away_players = away_team_profile['results']
                     away_players_names = []
                     for players in away_players:
@@ -2628,7 +2628,7 @@ class NFL_Article(Sitpicks):
                         str(team_home_id) + "&apiKey=" + \
                         self.ODDS_METABET_API_KEY
 
-                    home_odds_results = Sitpicks.get_data_request(self, URL)
+                    home_odds_results = Betpicks.get_data_request(self, URL)
 
                     for result in home_odds_results['results']:
                         if result['gameID'] == game_id:
@@ -2661,7 +2661,7 @@ class NFL_Article(Sitpicks):
                     URL = "https://sportsinformationtraders.api.areyouwatchingthis.com/api/odds.json?teamID=" + \
                         str(team_away_id) + "&apiKey=" + \
                         self.ODDS_METABET_API_KEY
-                    away_odds_results = Sitpicks.get_data_request(self, URL)
+                    away_odds_results = Betpicks.get_data_request(self, URL)
                     print(game_id)
                     for result in away_odds_results['results']:
 
@@ -4037,7 +4037,7 @@ class NFL_Article(Sitpicks):
 def generate_articles_html():
     print("Job is running at:", datetime.now(pakistan_timezone))
     logging.info('Job executed: generate_articles_html')
-    sitpick = Sitpicks()
+    betpick = Betpicks()
 
     nfl = NFL_Article()
 
@@ -4050,7 +4050,7 @@ def generate_articles_html():
 
 
 if __name__ == '__main__':
-    sitpick = Sitpicks()
+    betpick = Betpicks()
 
     scheduler = BackgroundScheduler()
     pakistan_timezone = pytz.timezone('Asia/Karachi')
