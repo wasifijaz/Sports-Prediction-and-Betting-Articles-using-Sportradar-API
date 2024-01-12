@@ -3,10 +3,10 @@ Sports Prediction and Betting Articles generation using Sportradar API
 Sports Covered uptil now:
 1. NBA
 2. NHL
+3. NFL
+4. MLB
 
 Odds Data functionality working completely fine. Email is also generted and sent automatically if articles are not generated. 
-
-Betting stats are missing due to some some API issue.
 
 Next task will be to work on NFL automation
 
